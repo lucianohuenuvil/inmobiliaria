@@ -1,0 +1,119 @@
+h2{
+    padding: 30px;
+    text-align: center;
+}
+
+.container-auth{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container-login{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 390px;
+    min-width: auto;
+    
+}
+
+
+.field-input{
+    margin-bottom: 8px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: solid 1px rgb(192, 192, 192);
+    
+
+}
+
+input {
+    border: none;
+    padding-left: 4px;
+    outline: none;
+    align-items: center;
+    
+}
+
+
+
+
+
+.auth-buttons {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    cursor: pointer;
+    
+}
+
+.normal-session{
+    background-color: rgb(91, 181, 138);
+    color: white;
+    padding: 10px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    
+}
+
+
+.google-session{
+    background-color: rgb(253, 255, 254);
+    border: 1px solid rgb(209, 209, 209);
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    margin-bottom: 4px;
+    cursor: pointer;
+}
+
+
+.auth-actions{
+    padding: 5px;
+    text-align: center;
+}
+
+.auth-actions p, a{
+    color: rgb(90, 90, 90);
+    font-size: 14px;
+}
+
+
+
+
+.auth-action-password{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.auth-action-password a{
+    display: flex;
+    justify-content: center;
+    color: brown;
+}
+
+.auth-action-register{
+    display: flex;
+    justify-content: center;
+}
+
+.auth-action-register a{
+    padding-left: 10px;
+    color: brown;
+}
+
+
+
+
+
+
+
+
+
+
