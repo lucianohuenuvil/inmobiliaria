@@ -5,22 +5,35 @@ export const authSlice = createSlice({
     name: 'auth',
     initialState: {
         status: 'not-check', //check - not-check - checking
+        uid:null,
+        name:null,
         email:null,
-        password:null,
         error: null 
     },
     reducers: {
-        login: (state, action) => {
-            // state.isLoading = !state.isLoading;
+        normalLogin: (state, action) => {
+            state.status = "Check";
+            state.uid = action.payload.uid;
+            state.email = action.payload.email;
+            state.name = action.payload.displayName;
+            state.error = null
         },
-        logout:(state, action) => {
-            // state.isLoading = !state.isLoading;
+        logoutSession:(state, action) => {
+            state.status = "Not-check";
+            state.uid = null;
+            state.email = null;
+            state.error = action.payload;
+               },
+        checkStatus:(state) => {
+            state.status = "Checking";
         },
-        check:(state, action) => {
-            state.status = action.payload.status;
-        },
-        
+        googleSignIn:(state, action) => {
+            state.status = "Check";
+            state.uid = action.payload.uid;
+            state.email = action.payload.email;
+            state.error = null
+        },        
     },
 })
 
-export const { login, logout, check } = authSlice.actions
+export const { normalLogin, logoutSession, checkStatus, googleSignIn } = authSlice.actions

@@ -1,40 +1,37 @@
 import React from 'react'
 import { useState } from 'react'
-import { UseButton } from '../../hooks/UseButton'
-import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import '../styles/auth.css'
-import { checkingAuth } from '../../../store/slices/auth/thunks'
+import { checkingAuth, startGoogleSignIn, startEmailSignIn } from '../../../store/slices/auth/thunks'
+import { UseForm } from '../../hooks/UseForm'
 
 
 export const LoginApp = () => {
 
   const dispatch = useDispatch();
+  const { error } = useSelector( state => state.auth)
 
 
 
-  const [input, setInput] = useState({
+
+  const {formulario, handleform} = UseForm({
     email:'',
     password:''
   });
 
+  const {email, password} = formulario;
+
+  
 
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    dispatch( checkingAuth ());
+    dispatch( startEmailSignIn(email,password) );
   }
 
 
   const handleGoogleSignIn = () => {
-    dispatch( checkingAuth ());
-  }
-
-  const handleinput= (e) => {
-    setInput({
-      ...input,
-      [e.target.name]:e.target.value})
+    dispatch( startGoogleSignIn() );
   }
 
 
@@ -43,23 +40,31 @@ export const LoginApp = () => {
 
     <div className='container-auth'>      
 
-      <form onSubmit={handleSubmit} className='container-login'>
+      <form onSubmit={handleSubmit} className='container-inputs'>
           <h2>¡Inicia sesión en tu cuenta </h2>
       
           <div className='field-input'>
               <i className="fa-solid fa-envelope"></i>
-              <input type='text' placeholder='Ingresar Email' name='email'  value={input.email} onChange={handleinput}/>
+              <input type='text' placeholder='Ingresar Email' name='email'  value={email} onChange={handleform}/>
           </div>
 
           <div className='field-input'>
               <i className="fa-solid fa-key"></i>
-              <input type='password' placeholder='Ingresar contraseña' name='password' value={input.password} onChange={handleinput}/>
+              <input type='password' placeholder='Ingresar contraseña' name='password' value={password} onChange={handleform}/>
           </div>
 
+          { (error != null)
+              &&  <div className='auth-buttons'>
+                    <label className='error-session'>Error: {error}</label>
+                  </div>
+          }
+
           <div className='auth-buttons'>
-              <input className='normal-session' type='submit' value="Iniciar sesión"/>
-              <input className='google-session' type='button' onClick={handleGoogleSignIn} value="Iniciar con Google"/>
+              <input className='normal-session' type='submit' value="INICIAR SESIÓN"/>
+              <input className='google-session' type='button' onClick={handleGoogleSignIn} value="INICIAR CON GOOGLE"/>
           </div>
+
+
 
           <div className='auth-actions'>
               <div className='auth-action-password'>
@@ -69,6 +74,9 @@ export const LoginApp = () => {
                   <p> ¿No tienes una cuenta? </p> <a href=""> Regístrate </a> 
               </div>
           </div>
+
+
+
       </form>
     </div>
 

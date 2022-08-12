@@ -11,7 +11,7 @@ h2{
 }
 
 
-.container-login{
+.container-inputs{
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -37,6 +37,7 @@ input {
     padding-left: 4px;
     outline: none;
     align-items: center;
+    width: 100%;
     
 }
 
@@ -52,6 +53,8 @@ input {
     
 }
 
+
+
 .normal-session{
     background-color: rgb(91, 181, 138);
     color: white;
@@ -63,12 +66,22 @@ input {
 
 
 .google-session{
-    background-color: rgb(253, 255, 254);
-    border: 1px solid rgb(209, 209, 209);
-    color: rgb(0, 0, 0);
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,65,255,0.8995973389355743) 0%, rgba(41,161,63,1) 37%, rgba(255,0,0,0.9416141456582633) 100%);
+    color: white;
     padding: 10px;
     margin-bottom: 4px;
     cursor: pointer;
+}
+
+.error-session{
+    width: 100%;
+    height: auto;
+    background-color: rgb(188, 83, 78);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 
