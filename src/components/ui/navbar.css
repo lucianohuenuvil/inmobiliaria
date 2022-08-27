@@ -7,6 +7,7 @@
     width: 100%;
     border-bottom: var(--border);
     background-color: rgb(48, 48, 48);
+    z-index: 2;
  }
 
  .container-navbar{

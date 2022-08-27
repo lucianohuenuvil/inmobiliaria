@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import '../styles/auth.css'
 import { checkingAuth, startGoogleSignIn, startEmailSignIn } from '../../../store/slices/auth/thunks'
 import { UseForm } from '../../hooks/UseForm'
+import { Link } from 'react-router-dom'
 
 
 export const LoginApp = () => {
@@ -71,7 +72,7 @@ export const LoginApp = () => {
                   <a href="">  ¿Has olvidado la contraseña? </a>
               </div>
               <div className='auth-action-register'>
-                  <p> ¿No tienes una cuenta? </p> <a href=""> Regístrate </a> 
+                  <p> ¿No tienes una cuenta? </p> <Link to='/auth/register'> Regístrate </Link> 
               </div>
           </div>
 

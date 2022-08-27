@@ -12,24 +12,25 @@ export const authSlice = createSlice({
     },
     reducers: {
         normalLogin: (state, action) => {
-            state.status = "Check";
+            state.status = "check";
             state.uid = action.payload.uid;
             state.email = action.payload.email;
             state.name = action.payload.displayName;
             state.error = null
         },
         logoutSession:(state, action) => {
-            state.status = "Not-check";
+            state.status = "not-check";
             state.uid = null;
             state.email = null;
             state.error = action.payload;
                },
         checkStatus:(state) => {
-            state.status = "Checking";
+            state.status = "checking";
         },
         googleSignIn:(state, action) => {
-            state.status = "Check";
+            state.status = "check";
             state.uid = action.payload.uid;
+            state.name = action.payload.displayName;
             state.email = action.payload.email;
             state.error = null
         },        

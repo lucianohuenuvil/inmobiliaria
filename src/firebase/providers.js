@@ -10,7 +10,6 @@ const googleProvider = new GoogleAuthProvider();
 export const singInWithGoogle = async() =>{
     try{
         const result = await signInWithPopup(FirebaseAuth,googleProvider);
-       // const credentials = GoogleAuthProvider.credentialFromResult( result );
         const { email, displayName, uid} = result.user;
         return{
             STATUS:true,
@@ -72,6 +71,10 @@ export const registerWithForm = async(form) =>{
 
 }
 
+
+export const logoutFirebase = async () => {
+    return await FirebaseAuth.signOut();
+}
 
 
 

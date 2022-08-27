@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { startRegister } from '../../../store/slices/auth/thunks'
 import { useDispatch, useSelector } from 'react-redux/es/exports'
 import { UseForm } from '../../hooks/UseForm'
@@ -134,7 +134,7 @@ export const RegisterApp = () => {
 
             <div className='auth-actions'>
                 <div className='auth-action-register'>
-                    <p> ¿Ya tienes una cuenta? </p> <a href=""> Ingresar </a> 
+                    <p> ¿Ya tienes una cuenta? </p> <Link to='/auth/login'> Ingresar </Link>  
                 </div>
             </div>
         </form>

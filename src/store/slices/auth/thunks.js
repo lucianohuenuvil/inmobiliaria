@@ -1,4 +1,4 @@
-import { singInWithGoogle, singInWithEmail, registerWithForm } from '../../../firebase/providers';
+import { singInWithGoogle, singInWithEmail, registerWithForm, logoutFirebase } from '../../../firebase/providers';
 import { checkStatus, googleSignIn, normalLogin, logoutSession} from './authSlice'
 
 
@@ -51,5 +51,12 @@ export const startRegister = (form) => {
             return dispatch (logoutSession(result.erro))
         }
 
+    }
+}
+
+export const startLogout = () => {
+    return async (dispatch) => {
+        await logoutFirebase();
+        dispatch(logoutSession());
     }
 }
