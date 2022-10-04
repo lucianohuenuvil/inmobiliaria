@@ -16,39 +16,41 @@ export const Residence = (prop) => {
   }
 
 
-  const {properties} = useSelector(state => state.view_publication)
 
- // console.log(properties)
+
+
+
+
+
+
+  const {properties} = useSelector(state => state.view_publication)
 
 
 
   return (
-    <div className='residence-box'>
+    <div className='re-box'>
 
-
-
-        <div  className='residence-content'>
-            <div className='close-button'>
+        <div  className='re-content'>
+            <div className='re-close-button'>
                 <i onClick={apretarboton} className="fa-solid fa-xmark"></i>
             </div>
 
+            <div className='re-description-container'>
 
+                <div className='re-description-box'>
 
-            <div className='images-container'>
-              <div className='show-image'>
+                    <div className='re-images-container'>
+                        <div className='re-show-image'>
+                            <img src={properties.image}></img>
+                        </div>
+                        <div className='re-images-list'>
 
-                  <img src={properties.image}></img>
+                        </div>
 
-
-              </div>
-              <div className='images-list'>
-
-              </div>
-
-            </div>
-
-            <div className='container-residence-description'>
-                <div className='residence-description'>
+                    </div>
+                    
+                    <div className='re-description'>
+                        <div className='residence-description'>
                             <div className='residence-title'>
                                 {(properties.tipo === "casa")
                                 ?  <h3>Arriendo de casa</h3>
@@ -77,10 +79,134 @@ export const Residence = (prop) => {
                             <div className='residence-button'>
                                 <button>Whatsapp</button>
                             </div>
-                
+                        
+                        </div>
+
+                        <div className='re-features'>
+                            <div className='residence-title'>
+                                <h3>Caracteristicas</h3>
+
+                            </div>
+
+                            <div className='re-features-table'>
+                                <div className='re-features-table-row'>
+                                    <div className='re-features-table-col-1'>
+                                        <b>Gastos Comunes</b>
+                                    </div>
+                                    <div className='re-features-table-col-2'>
+                                        <p>$50.000 </p>
+                                    </div>
+
+                                    
+                                </div>
+                                <div className='re-features-table-row-dark'>
+
+                                    <div className='re-features-table-col-1'>
+                                        <b>Dormitorios</b>
+                                    </div>
+                                    <div className='re-features-table-col-2'>
+                                        <p>3 </p>
+                                    </div>
+
+                                </div>
+                                <div className='re-features-table-row'>
+
+                                    <div className='re-features-table-col-1'>
+                                        <b>Baños</b>
+                                    </div>
+                                    <div className='re-features-table-col-2'>
+                                        <p>2 </p>
+                                    </div>
+                                
+                                </div>
+                                <div className='re-features-table-row-dark'>
+
+                                    
+                                    <div className='re-features-table-col-1'>
+                                        <b>Bodegas</b>
+                                    </div>
+                                    <div className='re-features-table-col-2'>
+                                        <p>1 </p>
+                                    </div>
+                                    
+                                </div>
+                                <div className='re-features-table-row'>
+
+                                    <div className='re-features-table-col-1'>
+                                        <b>Estacionamientos</b>
+                                    </div>
+                                    <div className='re-features-table-col-2'>
+                                        <p>0 </p>
+                                    </div>
+                                
+                                </div>
+
+                                <div className='re-features-table-row-dark'>
+
+                                    <div className='re-features-table-col-1'>
+                                        <b>Superficie útil</b>
+                                    </div>
+                                    <div className='re-features-table-col-2'>
+                                        <p>60 </p>
+                                    </div>
+
+                                </div>
+
+                                <div className='re-features-table-row'>
+
+                                    <div className='re-features-table-col-1'>
+                                        <b>Superficie total</b>
+                                    </div>
+                                    <div className='re-features-table-col-2'>
+                                        <p>65 </p>
+                                    </div>
+
+                                </div>
+                                <div className='re-features-table-row-dark'>
+
+                                    <div className='re-features-table-col-1'>
+                                        <b>Amoblado</b>
+                                    </div>
+                                    <div className='re-features-table-col-2'>
+                                        <p>NO </p>
+                                    </div>
+
+                                </div>                            
+                                
+                            </div>
+                        </div>
+            
                     </div>
+
+                </div>
+
+
+
+
+                <div className='re-detail'>
     
+                    <div className='residence-title'>
+                        <h3>Descripción</h3>
+                    </div>
+                    <div className='re-detail-text'>
+
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro aspernatur tenetur nostrum debitis delectus inventore p
+                        raesentium ut modi eum sint ea quod fugiat quos temporibus voluptatem, soluta eligendi, maxime necessitatibus?
+
+                    </p>
+
+                    </div>
+
+
+
+                </div>
+
+
             </div>
+
+
+
 
 
 
@@ -133,6 +259,9 @@ export const Residence = (prop) => {
             {/* <input onClick={apretarboton} type="button" value="apretar"/> */}
 
         </div>
+
+
+
     </div>
   )
 }

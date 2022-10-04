@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { view_details } from '../../../store/slices/view_publication/view_publication';
-//import { viewPublication } from '../../../store/slices/publications/publicationSlice';
 import { Residence } from './Residence'
 
 
@@ -26,7 +25,7 @@ export const Residences = () => {
     const selectResidence = (residence) => {
         console.log(residence)
         setview(true);
-        return dispatch( view_details (residence))
+        return dispatch( view_details (residence));
     }
     
 

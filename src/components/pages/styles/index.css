@@ -91,7 +91,7 @@
 
 }
 
-.button-search input[type="button"]{
+.button-search input[type="submit"]{
     background-color: rgb(180, 153, 30);
     width: 100%;
     height: 100%;
@@ -149,7 +149,7 @@
     flex-direction: column;
     padding: 10px;
     justify-content: space-between;
-    height: 45%;
+    height: 280px;
 
 
 }
@@ -197,6 +197,7 @@
 
 
 
+
 .residence-button button {
     height: 40px;
     width: 100%;
@@ -241,7 +242,7 @@
 
 
 
-.residence-box{
+.re-box{
     display: flex;
     position: fixed;
     top: 70px;
@@ -253,29 +254,28 @@
 }
 
 
-.residence-content{
-    position: relative;
+.re-content{
     top: 10px;
     margin: 10px;
     height: 90%;
+    width: 80%;
     background-color: white;
     overflow: scroll;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: column;
+    position: relative;
     
 }
 
-.close-button{
+.re-close-button{
     padding: 10px;
     position: absolute;
     right: 0;
-
+    top: 0;
     
 }
 
-.close-button i{
+.re-close-button i{
     font-size: 20px;
     color: #5a5a5a;
     cursor: pointer;
@@ -286,16 +286,13 @@
 
 /* ESTILO INTERNO*/
 
-.images-container{
+.re-images-container{
     margin: 10px;
     height: 600px;
-    width: 900px;
     background-color: #212121;
-
-
 }
 
-.show-image{
+.re-show-image{
     height: 90%;
     width: 100%;
     background-color: red;
@@ -303,27 +300,104 @@
 
 }
 
-.show-image img{
+.re-show-image img{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.images-list{
+.re-images-list{
     width: 100%;
     height: 10%;
     background-color: #5a5a5a;
 }
 
 
-.container-residence-description{
-    margin: 10px;
-    background-color: aqua;
-    height: 800px;
-    width: 500px;
+.re-description-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.re-description-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 
+.re-description{
+    display: flex;
+    flex-direction: column;
+    
+    width: 400px;
+}
+
+
+.re-detail{
+    display: flex;
+}
+
+
+
+.re-features{
+    padding-top: 20px;
+
+}
+
+
+.re-features-table{
+    background-color: #e7e6e6;
+    margin-top: 20px;
+    padding: 5px;
+    border-radius: 15px;
+
+}
+
+.re-features-table-row{
+    width: 100%;
+    height: 30px;
+
+    display: flex;
+ 
+}
+
+
+.re-features-table-row-dark{
+    width: 100%;
+    height: 30px;
+    display: flex;
+}
+
+
+.re-features-table-col-1{
+    width: 50%;
+    padding-left: 5px;
+    border-right:1px solid rgb(148, 147, 147) ;
+}
+
+.re-features-table-col-2{
+    width: 50%;
+    padding-left: 5px;
+    text-align: center;
+}
+
+.re-detail{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    flex-direction: column;
+    padding-top: 30px;
+}
+
+.re-detail-text{
+    height: auto;
+    background-color:rgb(217, 217, 217);
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 10px;
+}
 
 
 
@@ -342,6 +416,20 @@
     {
         width: 100%;
     }
+
+    .re-images-container{
+      height: auto;
+    }
+
+    .re-description{
+        width: 90% !important;
+    }
+
+    .re-content{
+        width: 95%;
+    }
+
+
       
 }
 
@@ -352,5 +440,9 @@
     .homescreen-container{
         padding: 75px 0px 50px 0px;
       }
+
+    .re-description{
+        width: 70%;
+    }
       
 }
